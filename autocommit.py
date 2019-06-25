@@ -6,13 +6,17 @@ DATE_FORMAT = '%Y-%m-%d %H:%M:%S.%f'
 
 today_date = datetime.datetime.now().date()
 incrementer_file_name = f'{username}.txt'
+new_user = False
+try:
+    last_run = subprocess.check_output(['tail', '-1', incrementer_file_name])
+except:
+    new_user = True
+if not new_user:
+    last_run_date = datetime.datetime.strptime(last_run, DATE_FORMAT)
+    last_run_date_no_time = last_run_date.date()
 
-last_run = subprocess.check_output(['tail', '-1', incrementer_file_name])
-last_run_date = datetime.datetime.strptime(last_run, DATE_FORMAT)
-last_run_date_no_time = last_run_date.date()
-
-if last_run_date_no_time == today_date:
-    exit()
+    if last_run_date_no_time == today_date:
+        exit()
 
 with open(incrementer_file_name, 'w') as f:
     f.write(today_date.strftime(DATE_FORMAT))
