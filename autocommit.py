@@ -12,7 +12,7 @@ try:
 except:
     new_user = True
 if not new_user:
-    last_run_date = datetime.datetime.strptime(last_run, DATE_FORMAT)
+    last_run_date = datetime.datetime.strptime(last_run.decode('utf-8').strip('\n'), DATE_FORMAT)
     last_run_date_no_time = last_run_date.date()
 
     if last_run_date_no_time == today_date:
