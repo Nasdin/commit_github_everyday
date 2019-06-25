@@ -18,7 +18,7 @@ with open(incrementer_file_name, 'w') as f:
     f.write(today_date.strftime(DATE_FORMAT))
 
 subprocess.run(['git', 'add', '-A'])
-subprocess.run('git', 'commit', '-m', f'"Autocommit from {username} on {today_date.strftime(DATE_FORMAT)}"'])
+subprocess.run(['git', 'commit', '-m', f'"Autocommit from {username} on {today_date.strftime(DATE_FORMAT)}"'])
 subprocess.run(['git', 'fetch'])
 subprocess.run(['git', 'rebase', 'origin/master'])
 subprocess.run(['git', 'push', '-f'])
