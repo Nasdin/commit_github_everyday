@@ -1,21 +1,35 @@
 # commit_github_everyday
-Ehh..look! I have a job and working!
+#### Ehh..look! I have a job and working!
 
-Steps:
-Clone the project
+# 5 simple steps:
 
-To run:
+    1. Make sure you're not using windows
+    2. Star this project so you know when the code changes
+    3. Fork the project 
+    4. Git Clone your fork to local
+    5. Decide to either run this manually or install a cron to run it for you ( See below )
+
+
+# To run:
 ```
 python autocommit.py
 ```
 
-To install as a cronjob:
+## To install as a cronjob:
 
 First make sure you have the dependencies installed:
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
-Then you run
-`python install.py`
+Then you run 
+
+```
+python install.py
+```
 
 uninstall
-`python uninstall.py`
+```
+python uninstall.py
+```
+
