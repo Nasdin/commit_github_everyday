@@ -2,6 +2,7 @@ import os
 import subprocess
 from crontab import CronTab
 
+
 USERNAME = subprocess.check_output('whoami', shell=True).decode('utf-8').strip('\n')
 CWD = os.getcwd()
 autocommit_filename = 'autocommit.py'

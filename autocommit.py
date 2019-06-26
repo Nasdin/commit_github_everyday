@@ -1,6 +1,6 @@
-import subprocess
 import datetime
 import os
+import subprocess
 
 
 USERNAME = subprocess.check_output('whoami', shell=True).decode('utf-8').strip('\n')
@@ -9,8 +9,8 @@ LOG_FOLDER = 'logs'
 TODAY_DATE = datetime.datetime.now().date()
 
 if __name__ == '__main__':
-
     import argparse
+
 
     cwd = os.getcwd()
 
