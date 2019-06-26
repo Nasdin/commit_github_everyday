@@ -10,7 +10,7 @@ cron = CronTab(user=USERNAME)
 
 job_reboot = cron.new(command=f'python {os.path.abspath(autocommit_filename)} {CWD}', comment='Make a commit everyday to fill up github profile')
 job = cron.new(command=f'python {os.path.abspath(autocommit_filename)} {CWD}', comment='Make a commit everyday to fill up github profile')
-job.minute.every(1)
+job.every().hour()
 job_reboot.every_reboot()
 
 cron.write()
