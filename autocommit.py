@@ -55,7 +55,7 @@ if __name__ == '__main__':
             exit()
 
     with open(incrementer_file_name, 'a') as f:
-        f.write(TODAY_DATE.strftime(DATE_FORMAT))
+        f.write(f'\n{TODAY_DATE.strftime(DATE_FORMAT)}')
 
     subprocess.run(['git', 'add', '-A'])
     subprocess.run(['git', 'commit', '-m', f'"Autocommit from {username} on {TODAY_DATE.strftime(DATE_FORMAT)}"'])
